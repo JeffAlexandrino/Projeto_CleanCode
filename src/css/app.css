@@ -1,0 +1,9 @@
+/* src/css/app.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Importar estilos do Flowbite */
+@import 'flowbite/css/flowbite.css';
+
+/* Seus estilos personalizados vão aqui */
