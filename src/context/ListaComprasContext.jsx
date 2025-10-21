@@ -1,47 +1,53 @@
 import { useEffect, useState, useContext, createContext } from "react";
 
 /**
- * Contexto é um tópico um pouco mais avançado de React, mas o que você precisa aprender aqui
- * é que é uma forma viável de compartilhar dados entre componentes de forma "global" sem precisar
- * passar dados de um componente para outro via props ou recriar os useStates comuns em cada santa função.
- *
- * O principio da simplificação aqui é que os useStates ficam "aqui" e o resto da aplicação só acessa e lê
- * desse local centralizado através do Provider e do hook `useContext`.
+ * Contexto global para gerenciar a lista de compras.
+ * Centraliza o estado e fornece acesso via hook `useShoppingList`.
+ * Também realiza persistência automática no localStorage.
  */
 
-const ListaComprasContext = createContext([[], () => {}]);
+const ShoppingListContext = createContext(undefined);
 
-/**
- * Além do `const [items, setItems] = useState([]);` que divulga a lista para toda aplicação
- * também fiz uma sincronização dos nossos itens com a memória do navegador (localStorage) assim
- * não perderemos os itens da lista de compras mesmo que fechamos a janela.
- */
-export function ListaComprasProvider(props) {
+const STORAGE_KEY = "shopping_list_items";
+
+export function ShoppingListProvider({ children }) {
   const [items, setItems] = useState([]);
 
+  // Carrega itens salvos ao iniciar
   useEffect(() => {
-    const itemsData = localStorage.getItem("items");
-    const items = itemsData ? JSON.parse(itemsData) : [];
-    setItems(items);
+    const storedItems = localStorage.getItem(STORAGE_KEY);
+    if (storedItems) {
+      try {
+        setItems(JSON.parse(storedItems));
+      } catch {
+        console.warn("Falha ao ler itens do localStorage.");
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
   }, []);
 
+  // Atualiza o localStorage sempre que os itens mudam
   useEffect(() => {
-    if (items.length > 0) {
-      localStorage.setItem("items", JSON.stringify(items));
-    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  return <ListaComprasContext.Provider value={[items, setItems]} {...props} />;
+  return (
+    <ShoppingListContext.Provider value={{ items, setItems }}>
+      {children}
+    </ShoppingListContext.Provider>
+  );
 }
 
-export function useListaCompras() {
-  const context = useContext(ListaComprasContext);
-  if (context === undefined) {
-    throw new Error(`useListaCompras must be used within a ListaComprasProvider`);
+export function useShoppingList() {
+  const context = useContext(ShoppingListContext);
+  if (!context) {
+    throw new Error("useShoppingList deve ser usado dentro de ShoppingListProvider");
   }
   return context;
 }
 
 export function generateId() {
-  return Math.random().toString(36).substr(2, 9);
+  return crypto.randomUUID
+    ? crypto.randomUUID()
+    : Math.random().toString(36).substring(2, 11);
 }
