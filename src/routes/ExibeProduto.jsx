@@ -1,27 +1,12 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
-/**
- * Essa estrutura de JSON abaixo finge ser um banco de dados de produtos "fake"
- */
 import produtosData from "../produtos.json";
 
-/**
- * Esta página agora serve de exemplo de adaptação dinâmica a URLs com parametros.
- * Neste caso precisamos receber um código (:id) na URL para saber qual produto
- * essa página deve se adaptar e exibir.
- *
- * Para obtermos algum "pedaço/informação" do endereço aberto no navegador, usamos
- * o hook `useParams` do React Router DOM.
- */
 export default function ProdutoExibe() {
-  // a variável-state abaixo irá armazenar nossos produtos do sistema para listarmos em tela
   const [items] = useState(produtosData);
 
   const { id } = useParams();
 
-  // após obtermos o código-id da URL na linha anterior, abaixo faço uma "busca-fake" na lista de produtos
-  // para achar qual produto queremos exibir
   const produto = items.find(item => item.id === Number(id));
 
   return (
