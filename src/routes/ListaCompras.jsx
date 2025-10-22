@@ -2,16 +2,6 @@ import { useState } from "react";
 
 import { useListaCompras, generateId } from "../context/ListaComprasContext";
 
-/**
- * A lista de compras agora nessa versão final do demo está usando um state compartilhado
- * através de um Context, esse uso que expliquei no final da aula visa compartilhar os itens
- * da lista de compras por toda a aplicação e não apenas enquanto a função-componente abaixo
- * estiver em uso.
- *
- * Caso isso seja muito complicado para você entender agora, simplifque voltando como estava antes:
- *
- *      const [items, setItems] = useState([]);
- */
 export default function ListaCompras() {
   const [items, setItems] = useListaCompras();
   const [errorMessage, setErrorMessage] = useState("");
@@ -19,25 +9,17 @@ export default function ListaCompras() {
   function addItem(event) {
     event.preventDefault();
 
-    // esta é uma nova ideia de como pegar os valores do form
-    // diferente da aula de HOOKs em que incentivei o uso de useState
-    // um campo para cada form ou um objeto para todos os campos
-    // aqui estamos acessando direto o DOM do form e lendo os valores
-    // dos campos por seus IDs/name
     const form = event.currentTarget;
     const formData = new FormData(form);
     if (formData.get("newItemName") !== "" && +formData.get("newItemQtd") > 0) {
-      // objeto que representa nosso novo item
       const newItem = {
         id: generateId(),
         name: formData.get("newItemName"),
         qtd: +formData.get("newItemQtd"),
       };
 
-      // mantando os itens já cadastrados e adicionando o novo no final
       setItems([...items, newItem]);
 
-      // resetando o form e apagando mensagens de erro antigas
       form.reset();
       setErrorMessage("");
     } else {
