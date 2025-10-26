@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import { Button, Modal } from 'flowbite-react';
+import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 
 export default function UserList() {

@@ -1,16 +1,8 @@
 import { useEffect, useState, useContext, createContext } from "react";
 
-/**
- * Contexto global para gerenciar a lista de compras.
- * Centraliza o estado e fornece acesso via hook `useShoppingList`.
- * Também realiza persistência automática no localStorage.
- */
+const ListaComprasContext = createContext([[], () => {}]);
 
-const ShoppingListContext = createContext(undefined);
-
-const STORAGE_KEY = "shopping_list_items";
-
-export function ShoppingListProvider({ children }) {
+export function ListaComprasProvider(props) {
   const [items, setItems] = useState([]);
 
   // Carrega itens salvos ao iniciar

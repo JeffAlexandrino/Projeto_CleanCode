@@ -1,14 +1,10 @@
-import { useShoppingList, generateId } from "../context/ShoppingListContext";
+import { useListaCompras, generateId } from "../context/ListaComprasContext";
+import { generateId } from "../context/ShoppingListContext";
 import { useState } from "react";
 
-/**
- * Componente responsável por exibir e gerenciar a lista de compras.
- * Utiliza um contexto global (ShoppingListContext) para compartilhar estado
- * entre diferentes partes da aplicação.
- */
-export default function ShoppingList() {
-  const { items, setItems } = useShoppingList();
-  const [error, setError] = useState("");
+export default function ListaCompras() {
+  const [items, setItems] = useListaCompras();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleAddItem = (event) => {
     event.preventDefault();

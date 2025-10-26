@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Essa estrutura de JSON abaixo finge ser um banco de dados de produtos "fake"
- */
 import produtosData from "../produtos.json";
 
 export default function Produtos() {
-  // a variável-state abaixo irá armazenar nossos produtos do sistema para listarmos em tela
   const [items] = useState(produtosData);
 
   return (

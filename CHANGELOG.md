@@ -3,6 +3,14 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
+## [1.0.3]
+### Adicionado
+
+### Removido
+
+### Update
+
+---
 ## [1.0.2]
 ### Adicionado
 * Adicionado tratamento de erro ao carregar dados do localStorage.
