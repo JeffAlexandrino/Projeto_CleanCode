@@ -6,7 +6,7 @@ export default function ListaCompras() {
   const [items, setItems] = useListaCompras();
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleAddItem = (event) => {
+  const handleAddItem = event => {
     event.preventDefault();
 
     const form = event.currentTarget;
@@ -35,22 +35,17 @@ export default function ListaCompras() {
 
       {hasItems ? (
         <ul className="mx-5 my-4 list-disc">
-          {items.map((item) => (
+          {items.map(item => (
             <li key={item.id} className="py-px">
               <strong>{item.name}</strong> - {item.qtd}
             </li>
           ))}
         </ul>
       ) : (
-        <p className="font-semibold text-gray-600">
-          Nenhum item adicionado até o momento.
-        </p>
+        <p className="font-semibold text-gray-600">Nenhum item adicionado até o momento.</p>
       )}
 
-      <form
-        onSubmit={handleAddItem}
-        className="mt-6 w-full max-w-md rounded bg-gray-100 p-3.5"
-      >
+      <form onSubmit={handleAddItem} className="mt-6 w-full max-w-md rounded bg-gray-100 p-3.5">
         <div className="mb-4">
           <label htmlFor="newItemName" className="block text-gray-600">
             Nome do Produto
@@ -78,10 +73,7 @@ export default function ListaCompras() {
           {error && <p className="mt-1 font-semibold text-red-500">{error}</p>}
         </div>
 
-        <button
-          type="submit"
-          className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600"
-        >
+        <button type="submit" className="rounded bg-teal-500 px-4 py-2 text-white hover:bg-teal-600">
           Adicionar Item
         </button>
       </form>

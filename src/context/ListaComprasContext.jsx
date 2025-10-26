@@ -23,11 +23,7 @@ export function ListaComprasProvider(props) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   }, [items]);
 
-  return (
-    <ShoppingListContext.Provider value={{ items, setItems }}>
-      {children}
-    </ShoppingListContext.Provider>
-  );
+  return <ShoppingListContext.Provider value={{ items, setItems }}>{children}</ShoppingListContext.Provider>;
 }
 
 export function useShoppingList() {
@@ -39,7 +35,5 @@ export function useShoppingList() {
 }
 
 export function generateId() {
-  return crypto.randomUUID
-    ? crypto.randomUUID()
-    : Math.random().toString(36).substring(2, 11);
+  return crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 11);
 }

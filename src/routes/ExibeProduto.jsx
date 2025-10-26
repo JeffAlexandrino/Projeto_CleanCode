@@ -5,7 +5,6 @@ import produtosData from "../produtos.json";
 
 export default function ProdutoExibe() {
   const [items] = useState(produtosData);
-
   const { id } = useParams();
 
   const produto = items.find(item => item.id === Number(id));

@@ -4,12 +4,18 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 
 ---
 ## [1.0.3]
+### Adicionado
+* PDF da entrega 2.
+
 ### Removido
 * Arquivos HTML desnecessários.
+* Pasta LibraryGuru
 * Comentários desnecessários.
 
 ### Update
 * Organização dos imports nos arquivos.
+* Aplicado formatação nos arquivos jsx usando prettier.
+
 
 ---
 ## [1.0.2]
@@ -17,9 +23,6 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 * Adicionado tratamento de erro ao carregar dados do localStorage.
 * Implementado uso de constante STORAGE_KEY para chave de armazenamento.
 * Adicionado tratamento para produto não encontrado em ExibeProduto.
-
-### Removido
-
 
 ### Update
 * Refatorado ListaComprasContext para ShoppingListContext com nomes padronizados em inglês.
