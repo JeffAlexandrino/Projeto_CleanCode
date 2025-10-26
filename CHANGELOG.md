@@ -4,11 +4,12 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 
 ---
 ## [1.0.3]
-### Adicionado
-
 ### Removido
+* Arquivos HTML desnecessários.
+* Comentários desnecessários.
 
 ### Update
+* Organização dos imports nos arquivos.
 
 ---
 ## [1.0.2]
