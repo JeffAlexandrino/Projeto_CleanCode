@@ -1,21 +1,17 @@
 # Projeto Intermediário — Clean Code
 
 ## Integrantes
-
 * [Jefferson Barzan Alexandrino](https://github.com/JeffAlexandrino)
 * [Gabriel Angelo Kauffman](https://github.com/GabrielAKaufmann)
-
 ---
 
 ## Sobre o projeto
 ### Descrição
-
 Atividade avaliativa da matéria de **Clean Code**, cujo objetivo é aplicar princípios de código limpo e boas práticas de programação em um projeto já desenvolvido anteriormente.
 
 [Link da atividade no GitLab](https://gitlab.com/professor-rvenson/cleancode-2025-2/-/blob/main/projetos/abp01-refatoracao.md?ref_type=heads)
 
 ### Objetivo
-
 * Identificar e eliminar *code smells*;
 * Aplicar princípios do livro *Clean Code*;
 * Criar uma suíte de testes unitários com cobertura parcial (~50%);
@@ -25,13 +21,13 @@ Atividade avaliativa da matéria de **Clean Code**, cujo objetivo é aplicar pri
 ---
 
 ## Tecnologias, bibliotecas e frameworks
-
 1. [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 2. [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 3. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 4. [Bootstrap](https://getbootstrap.com/)
 5. [React](https://react.dev/)
-
+6. [ESLint](https://eslint.org/)
+7. [Prettier](https://prettier.io/)
 ---
 
 ## Descrição do software original
@@ -87,8 +83,29 @@ Tela inicial com duas opções: ***cliente e funcionário*** <br>
 
 ## Problemas identificados (Code Smells)
 Durante a análise inicial, foram detectados os seguintes problemas no código:
+Aqui estão os code smells resumidos para incluir no seu README:
 
-(Listar aqui)
+**Code Smells Identificados:**
+
+1. **Roteamento Duplicado** - Caminhos "/" e "" sem distinção clara
+2. **Gestão de Estado Incorreta** - Uso inadequado do useState (reatribuição direta)
+3. **Arquitetura HTML Fragmentada** - Múltiplos arquivos HTML estáticos e obsoletos
+4. **Estilos Inconsistentes** - Mix de Tailwind, CSS personalizado e inline
+5. **Lógica de Negócio nos Componentes** - Dados hardcoded e acoplamento
+6. **Problemas de Acessibilidade** - Tags `<a>` como botões e má semântica
+7. **Nomenclatura Inconsistente** - Mix de português e inglês nos nomes
+8. **Código Duplicado** - Estruturas repetitivas em tabelas e formulários
+9. **Falta de Componentização** - Blocos monolíticos sem reutilização
+10. **Gestão de Estado Primitiva** - Arrays simples sem persistência
+
+**Principais Impactos:**
+- Manutenibilidade comprometida
+- Inconsistência visual e funcional
+- Baixa reutilização de código
+- Dificuldade para testes e escalabilidade
+- Problemas de acessibilidade e SEO
+
+Estes problemas apontam para a necessidade de refatoração da arquitetura, padronização de convenções e implementação de melhores práticas do React.
 
 ## Estratégias e técnicas de refatoração
 Para corrigir os problemas encontrados, foram aplicadas as seguintes práticas:
@@ -107,10 +124,8 @@ Para corrigir os problemas encontrados, foram aplicadas as seguintes práticas:
 Foi criada uma suíte de testes unitários para garantir o funcionamento correto das principais funções e componentes refatorados.
 
 ### Frameworks e ferramentas utilizadas
-
 * [Jest](https://jestjs.io/) — execução e cobertura de testes
 * [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) — testes de componentes React
-
 ---
 
 ## Instalação e execução

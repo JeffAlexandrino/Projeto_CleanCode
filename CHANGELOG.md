@@ -3,7 +3,22 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
-## [1.0.3]
+
+##  [28/10] - [1.0.5]
+### Adicionado
+* ESLint e Prettier adicionados ao tech stack
+* README aprimorado com code smells detalhados
+
+### Removido
+* Arquivo PDF obsoleto removido
+
+### Update
+* Largura do card de login ajustada para melhorar o layout
+* AuthLayout atualizado para utilizar nova imagem
+* index.html atualizado para referenciar o novo favicon
+---
+
+##  [21/10] - [1.0.3]
 ### Adicionado
 * PDF da entrega 2.
 
@@ -15,10 +30,9 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 ### Update
 * Organização dos imports nos arquivos.
 * Aplicado formatação nos arquivos jsx usando prettier.
-
-
 ---
-## [1.0.2]
+
+##  [12/10] - [1.0.2]
 ### Adicionado
 * Adicionado tratamento de erro ao carregar dados do localStorage.
 * Implementado uso de constante STORAGE_KEY para chave de armazenamento.
@@ -38,7 +52,7 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 * Em ListaCompras, melhorada renderização condicional e mensagens de erro.
 ---
 
-## [1.0.1]
+## [10/10] - [1.0.1] 
 ### Adicionado
 * Novo README.
 * Criado arquivo CHANGELOG.
