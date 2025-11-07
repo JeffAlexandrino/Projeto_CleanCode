@@ -1,43 +1,43 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const usuarios = [
   {
     nome: "",
     email: "",
-    telefone: ""
+    telefone: "",
   },
   {
     nome: "Maria Silva",
     email: "maria.silva@email.com",
-    telefone: "(123) 456-7890"
+    telefone: "(123) 456-7890",
   },
   {
     nome: "João Santos",
     email: "joao.santos@email.com",
-    telefone: "(987) 654-3210"
+    telefone: "(987) 654-3210",
   },
   {
     nome: "Ana Oliveira",
     email: "ana.oliveira@email.com",
-    telefone: "(111) 222-3333"
+    telefone: "(111) 222-3333",
   },
   {
     nome: "Pedro Almeida",
     email: "pedro.almeida@email.com",
-    telefone: "(555) 444-3333"
+    telefone: "(555) 444-3333",
   },
   {
     nome: "Sofia Ferreira",
     email: "sofia.ferreira@email.com",
-    telefone: "(999) 888-7777"
+    telefone: "(999) 888-7777",
   },
   {
     nome: "Carlos Machado",
     email: "carlos.machado@email.com",
-    telefone: "(777) 666-5555"
-  }
+    telefone: "(777) 666-5555",
+  },
 ];
 
 export default function UserForm() {
@@ -50,12 +50,11 @@ export default function UserForm() {
     usuario = usuarios[0];
   }
 
-
   return (
     <div className="p-6">
       <form className="mx-auto max-w-sm">
-        <h4 className="text-4xl mb-6 font-extrabold">{id ? `Editar Usuário ${id}` : "Cadastrar Usuário"}</h4>
-        
+        <h4 className="mb-6 text-4xl font-extrabold">{id ? `Editar Usuário ${id}` : "Cadastrar Usuário"}</h4>
+
         <div className="mb-5">
           <label className="mb-2 block text-sm font-medium text-gray-900">Nome:</label>
           <input

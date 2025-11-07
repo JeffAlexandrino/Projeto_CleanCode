@@ -58,23 +58,20 @@ export default function RootLayout() {
             className={`order-last mt-2 w-full flex-grow items-center md:order-none md:mt-0 md:flex md:w-auto ${
               !isMenuOpen ? "hidden" : ""
             }`}>
-            <NavLink to="/home" className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`} end>
+            <NavLink
+              to="/home"
+              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}
+              end>
               Home
             </NavLink>
-            <NavLink
-              to="/books"
-              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
+            <NavLink to="/books" className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
               Lista de Livros
             </NavLink>
-            <NavLink
-              to="/users"
-              className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
+            <NavLink to="/users" className={({ isActive }) => `${navLinkClassName} ${isActive ? "text-blue-600" : ""}`}>
               Lista de Usuários
             </NavLink>
 
-            <NavLink
-              to="/"
-              className="text-red-600">
+            <NavLink to="/" className="text-red-600">
               Sair
             </NavLink>
           </nav>

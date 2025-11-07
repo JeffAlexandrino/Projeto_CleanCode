@@ -1,56 +1,56 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const livros = [
-  {titulo: ""},
+  { titulo: "" },
   {
     titulo: "Guia do Mochilheiro das Galáxias",
     autor: "Douglas Adams",
     categoria: "Ficção Científica",
-    preco: 29.90
+    preco: 29.9,
   },
   {
     titulo: "A Revolução dos Bichos",
     autor: "George Orwell",
     categoria: "Ficção",
-    preco: 12.99
+    preco: 12.99,
   },
   {
     titulo: "O Senhor dos Anéis",
     autor: "J.R.R. Tolkien",
     categoria: "Fantasia",
-    preco: 15.50
+    preco: 15.5,
   },
   {
     titulo: "Cem Anos de Solidão",
     autor: "Gabriel García Márquez",
     categoria: "Realismo Mágico",
-    preco: 9.99
+    preco: 9.99,
   },
   {
     titulo: "Dom Quixote",
     autor: "Miguel de Cervantes",
     categoria: "Clássico",
-    preco: 11.25
+    preco: 11.25,
   },
   {
     titulo: "Harry Potter e a Pedra Filosofal",
     autor: "J.K. Rowling",
     categoria: "Fantasia",
-    preco: 14.75
+    preco: 14.75,
   },
   {
     titulo: "1984",
     autor: "George Orwell",
     categoria: "Ficção Distópica",
-    preco: 10.99
+    preco: 10.99,
   },
   {
     titulo: "A Metamorfose",
     autor: "Franz Kafka",
     categoria: "Ficção Absurda",
-    preco: 8.50
+    preco: 8.5,
   },
 ];
 
@@ -67,8 +67,8 @@ export default function BookForm() {
   return (
     <div className="p-6">
       <form className="mx-auto max-w-sm">
-        <h4 className="text-4xl mb-6 font-extrabold">{id ? `Editar Livro ${id}` : "Cadastrar Livro"}</h4>
-        
+        <h4 className="mb-6 text-4xl font-extrabold">{id ? `Editar Livro ${id}` : "Cadastrar Livro"}</h4>
+
         <div className="mb-5">
           <label className="mb-2 block text-sm font-medium text-gray-900">Título:</label>
           <input
