@@ -1,10 +1,10 @@
+import { Button, Modal } from "flowbite-react";
 import { NavLink } from "react-router-dom";
-import { Button, Modal } from 'flowbite-react';
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function BookList() {
   const [openModal, setOpenModal] = useState(false);
-  
+
   return (
     <div className="p-6">
       <h2 className="mb-10 flex justify-between text-4xl font-extrabold">
@@ -231,16 +231,18 @@ export default function BookList() {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <h3 className="mb-5 text-lg font-normal text-gray-500">
-            Tem certeza que vai excluir o Usuário?
-            </h3>
+            <h3 className="mb-5 text-lg font-normal text-gray-500">Tem certeza que vai excluir o Usuário?</h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={() => setOpenModal(false)}
-              className="me-2 inline-flex items-center rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300">
+              <Button
+                color="failure"
+                onClick={() => setOpenModal(false)}
+                className="me-2 inline-flex items-center rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300">
                 Sim
               </Button>
-              <Button color="gray" onClick={() => setOpenModal(false)}
-              className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
+              <Button
+                color="gray"
+                onClick={() => setOpenModal(false)}
+                className="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
                 Não
               </Button>
             </div>

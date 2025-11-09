@@ -120,8 +120,70 @@ Para corrigir os problemas encontrados, foram aplicadas as seguintes práticas:
 
 ---
 
+## Testes 
 ### Estratégia de testes
 Foi criada uma suíte de testes unitários para garantir o funcionamento correto das principais funções e componentes refatorados.
+
+### Componente de Login (`Login.test.js`)
+- **Renderização dos elementos principais**: Verifica se todos os elementos essenciais (título, campos de email, senha e botão de entrar) são renderizados corretamente
+- **Interação com campos**: Testa a funcionalidade de digitação nos campos de email e senha, além da opção "Lembrar de mim"
+- **Validação de campos obrigatórios**: Confirma que os campos de email e senha são marcados como obrigatórios
+- **Navegação correta**: Verifica se os links de navegação possuem os destinos adequados
+
+### Componente de Recuperação de Senha (`ForgotPassword.test.js`)
+- **Renderização do componente**: Testa a exibição do título e elementos principais
+- **Interação com campo de email**: Valida a funcionalidade de digitação no campo de email
+- **Campo obrigatório**: Confirma que o campo de email é marcado como obrigatório
+- **Mensagens de instrução**: Verifica a exibição das mensagens informativas para o usuário
+- **Links de navegação**: Testa se os botões de "Enviar" e "Voltar" possuem os links corretos
+
+### Cobertura de Testes
+
+Os testes cobrem:
+- **Renderização de componentes** e elementos UI
+- **Interação do usuário** com campos de formulário
+- **Validação de formulários** (campos obrigatórios)
+- **Navegação e rotas** entre páginas
+- **Funcionalidades críticas** de autenticação
+
+#### Tecnologias Utilizadas nos Testes
+- React Testing Library
+- User Event para simulação de interações
+- Jest como framework de teste
+
+A suíte de testes garante que os componentes de autenticação funcionem conforme esperado, proporcionando uma base sólida para o desenvolvimento contínuo.
+
+---
+## Interface Fluente (Sugestão)
+
+### O que é
+Uma forma de escrever código que parece uma frase, encadeando métodos.
+
+### Exemplos sugeridos
+```javascript
+// Busca de livros
+const livros = new BuscaLivros()
+  .porTitulo("Clean Code")
+  .doAutor("Robert Martin")
+  .ordenarPorData()
+  .executar();
+
+// Carrinho de compras
+carrinho
+  .adicionarLivro(livro1)
+  .aplicarCupom("CLEAN10")
+  .calcularFrete()
+  .finalizarCompra();
+```
+
+### Onde implementar
+- Filtros e buscas
+- Configuração de componentes  
+- Processos com múltiplos passos
+
+**Observação:** Não foi implementado no código, mas seria uma melhoria futura para deixar o código mais legível.
+
+---
 
 ### Frameworks e ferramentas utilizadas
 * [Jest](https://jestjs.io/) — execução e cobertura de testes
@@ -151,13 +213,22 @@ npm run dev
 
 # Executar testes
 npm run test
+
+# Caso dê erro, pode ser necessário fazer o seguinte comando antes de executar
+npm install flowbite flowbite-react 
 ```
 
 ---
 
 ## Resultados alcançados
+Após a refatoração, conseguimos:
 
-(Escrever aqui o que alcançamos)
+- **Código mais limpo**: Eliminamos code smells e reduzimos duplicação
+- **Organização melhorada**: Criamos componentes reutilizáveis e padronizamos a estrutura
+- **Testes implementados**: Cobrimos funcionalidades críticas com testes unitários
+- **Manutenção facilitada**: Código mais legível e fácil de dar manutenção
+
+O projeto agora está mais organizado e seguindo boas práticas de desenvolvimento.
 
 ---
 
