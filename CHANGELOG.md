@@ -2,6 +2,11 @@
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
+## [08/11] - [1.0.7]
+### Update
+* Mais arquivos foram formatados usando prettier.
+* Readme atualizado com novas informações e testes.
+
 ---
 
 ##  [06/11] - [1.0.6]
@@ -33,6 +38,7 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 * Largura do card de login ajustada para melhorar o layout
 * AuthLayout atualizado para utilizar nova imagem
 * index.html atualizado para referenciar o novo favicon
+
 ---
 
 ##  [21/10] - [1.0.3]
@@ -47,6 +53,7 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 ### Update
 * Organização dos imports nos arquivos.
 * Aplicado formatação nos arquivos jsx usando prettier.
+
 ---
 
 ##  [12/10] - [1.0.2]
@@ -67,6 +74,7 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 * Em ListaCompras, simplificada função addItem (agora handleAddItem) com validação clara.
 * Em ListaCompras, substituído acesso ao contexto por objeto { items, setItems }.
 * Em ListaCompras, melhorada renderização condicional e mensagens de erro.
+
 ---
 
 ## [10/10] - [1.0.1] 
