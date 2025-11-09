@@ -4,6 +4,23 @@ O formato segue as recomendações do [Keep a Changelog](https://keepachangelog.
 
 ---
 
+##  [06/11] - [1.0.6]
+### Adicionado
+* Configuração completa do Jest para execução de testes unitários
+* Suíte de testes para o componente Login com cobertura funcional significativa
+* Suíte de testes para o componente ForgotPassword com cenários principais
+* Scripts npm para testes: test, test:watch, test:coverage
+* Dependências de teste: jest, jest-environment-jsdom, @testing-library/react, @testing-library/jest-dom, @testing-library/user-event
+* Arquivos de configuração: jest.config.js, babel.config.js, src/setupTests.js
+
+### Update
+* package.json atualizado com scripts e dependências de teste
+* Estrutura de pastas organizada com diretório src/testes/ para arquivos de teste
+* Configuração do Babel para suporte a JSX nos testes
+* Melhoria na importação de componentes nos testes
+
+---
+
 ##  [28/10] - [1.0.5]
 ### Adicionado
 * ESLint e Prettier adicionados ao tech stack
